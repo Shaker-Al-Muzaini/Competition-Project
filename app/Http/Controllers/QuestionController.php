@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Answer;
 use App\Models\Question;
 use http\Encoding\Stream\Inflate;
 use Illuminate\Http\Request;
@@ -26,7 +27,23 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->all();
+        $requestdate=$request->all();
+        $question=$requestdate['question'];
+
+        $newQuestions=new Question;
+        $newQuestions->question=$question;
+        $newQuestions->save();
+
+        $answers=$requestdate['answers'];
+        foreach($answers as  $answer){
+            $newAnswer=new Answer;
+            $newAnswer->answer=$answer['answer'];
+            $newAnswer->question_id=$newQuestions->id;
+            $newAnswer->correct_answer=$answer['correct_answer'];
+            $newAnswer->save();
+        }
+
+        return redirect('/questions')->with('success','Questions ans  answers created success');
     }
 
     /**
