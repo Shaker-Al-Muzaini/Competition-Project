@@ -9,7 +9,7 @@ import {Link} from '@inertiajs/vue3'
             <div class="col-lg-6 mx-auto">
                 <p class="lead mb-4">Click the button below to start the quiz</p>
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <Link href="" class="btn btn-primary btn-lg px-4 gap-3">Go to Quiz</Link>
+                    <Link href="/quiz" class="btn btn-primary btn-lg px-4 gap-3">Go to Quiz</Link>
                 </div>
             </div>
         </div>
