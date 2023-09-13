@@ -158,9 +158,9 @@ function deleteQuestion(id){
                 <th scope="row">{{index+1}}</th>
                 <td>{{question.question }}</td>
                 <td>
-                    <button @click="viewQuestion(index)" class="btn btn-primary">View</button>
-                    <button @click="editquestionModal=true,editQuestion(index)" class="btn btn-success">Edit</button>
-                    <button @click="deleteQuestion(question.id)" class="btn btn-danger">Delete</button>
+                    <button @click="viewQuestion(index)" class="btn btn-primary me-2">View</button>
+                    <button @click="editquestionModal=true,editQuestion(index)" class="btn btn-success me-2">Edit</button>
+                    <button @click="deleteQuestion(question.id)" class="btn btn-danger me-2">Delete</button>
                 </td>
 
             </tr>
