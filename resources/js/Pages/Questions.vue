@@ -206,7 +206,7 @@ function deleteQuestion(id){
                     </form>
                 </template>
                 <template #footer>
-                    <span @click="addNewAnswer" v-if="newAnswers.length<4"><h3>+</h3></span>
+                    <span style="cursor: pointer;" @click="addNewAnswer" v-if="newAnswers.length<4"><h3>+</h3></span>
                     <button @click="destroyModal" class="btn btn-danger">Close</button>
                     <button v-if="newAnswers.length>3" @click="submitQuestion" class="btn btn-success">Submit</button>
                 </template>
